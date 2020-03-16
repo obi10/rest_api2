@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  data-registry:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 5001:80

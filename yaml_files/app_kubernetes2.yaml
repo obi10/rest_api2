@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restapi2-data-registry-deployment
+  labels:
+    app: restapi2-data-registry
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: restapi2-data-registry
+  template:
+    metadata:
+      labels:
+        app: restapi2-data-registry
+    spec:
+      containers:
+      - name: restapi2-data-registry
+        image: iad.ocir.io/idu4fp3liu3m/madhack-rest:v1
+        ports:
+        - containerPort: 80
